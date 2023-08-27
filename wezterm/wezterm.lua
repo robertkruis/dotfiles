@@ -13,10 +13,7 @@ return {
 	font_dirs = { "fonts" },
 	font_size = 10.5,
 	font = wezterm.font_with_fallback({
-		{
-			family = "CommitMono",
-			harfbuzz_features = { "ss01", "ss06", "ss10", "zero", }
-		},
+		{ family = "CommitMono" },
 		{ family = "Symbols NFM" },
 	}),
 	line_height = 1.0,
