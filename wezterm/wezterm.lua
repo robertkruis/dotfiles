@@ -3,12 +3,6 @@ local wezterm = require("wezterm")
 local scoop_path = os.getenv("SCOOP")
 
 return {
-	default_prog = {
-		string.format("%s\\apps\\git\\current\\bin\\bash.exe", scoop_path),
-		"--login",
-		"-i",
-		"-l",
-	},
 	color_scheme = "Gruvbox dark, hard (base16)",
 	font_dirs = { "fonts" },
 	font_size = 10.5,
