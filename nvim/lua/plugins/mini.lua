@@ -8,6 +8,28 @@ return {
     version = false,
     config = function()
       local miniclue = require("mini.clue")
+	  
+	  function gen_debug_clues()
+		local keymaps = vim.api.nvim_get_keymap("n")
+		local debug_prefix = string.format("%sd", vim.g.mapleader)
+		local debug_clues = {
+			{ mode = "n", keys = "<Leader>d", desc = "+Debug", postkeys = "<Leader>d" },
+		}
+		
+		for _, map in ipairs(keymaps) do
+			if string.sub(map.lhs, 1, #debug_prefix) == debug_prefix then
+				table.insert(debug_clues, {
+					mode = map.mode,
+					keys = map.lhs,
+					desc = map.desc,
+					postkeys = debug_prefix
+				})
+			end
+		end
+		
+		return debug_clues
+	  end
+	  
       miniclue.setup({
         triggers = {
           -- Leader triggers
@@ -52,7 +74,9 @@ return {
           -- Custom clues
           { mode = "n", keys = "<Leader>b", desc = "+Buffers" },
           { mode = "n", keys = "<Leader>c", desc = "+Code" },
-          { mode = "n", keys = "<Leader>d", desc = "+Debug", postkeys = "<Leader>d" },
+          --{ mode = "n", keys = "<Leader>d", desc = "+Debug", postkeys = "<Leader>d" },
+		  gen_debug_clues(),
+		 
           { mode = "n", keys = "<Leader>f", desc = "+Files" },
           { mode = "n", keys = "<Leader>g", desc = "+Git" },
           { mode = "n", keys = "<Leader>q", desc = "+Session" },
