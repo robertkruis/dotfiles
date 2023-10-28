@@ -8,12 +8,23 @@ return {
   {
     "sainnhe/everforest",
   },
+  {
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    priority = 1000,
+    init = function()
+      vim.g.gruvbox_material_background = "soft"
+      vim.g.gruvbox_material_enable_italic = 1
+      vim.g.gruvbox_material_show_eob = 0
+	  vim.g.gruvbox_material_float_style = "dim"
+    end,
+  },
 
   -- change the colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "everforest",
+      colorscheme = "gruvbox-material",
     },
   },
 }
