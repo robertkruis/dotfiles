@@ -7,7 +7,7 @@ return {
 	font_dirs = { "fonts" },
 	font_size = 10.5,
 	font = wezterm.font_with_fallback({
-		{ family = "CommitMono" },
+		{ family = "Monaspace Krypton" },
 		{ family = "Symbols NFM" },
 	}),
 	line_height = 1.0,
