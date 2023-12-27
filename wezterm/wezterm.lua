@@ -14,4 +14,17 @@ return {
 	cell_width = 1.0,
 	cursor_thickness = "100%",
 	default_cursor_style = "SteadyUnderline",
+	default_prog = { "d:\\Apps\\.scoop\\apps\\git\\current\\bin\\bash" },
+
+	-- Fix CTRL + SPACE issue for Neovim/Git Bash (https://github.com/wez/wezterm/issues/405)
+	keys = {
+		{
+			key = " ",
+			mods = "CTRL",
+			action = wezterm.action.SendKey({
+				key = " ",
+				mods = "CTRL",
+			}),
+		},
+	},
 }
