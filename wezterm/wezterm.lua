@@ -1,20 +1,19 @@
 local wezterm = require("wezterm")
 
-local scoop_path = os.getenv("SCOOP")
-
 return {
+	default_prog = { "powershell.exe", "-NoLogo" },
 	color_scheme = "Gruvbox dark, hard (base16)",
 	font_dirs = { "fonts" },
-	font_size = 10.5,
+	font_size = 11.25,
 	font = wezterm.font_with_fallback({
-		{ family = "Monaspace Krypton" },
+		-- { family = "Monaspace Krypton" },
+		{ family = "Maple Mono" },
 		{ family = "Symbols NFM" },
 	}),
 	line_height = 1.0,
 	cell_width = 1.0,
 	cursor_thickness = "100%",
 	default_cursor_style = "SteadyUnderline",
-	default_prog = { "d:\\Apps\\.scoop\\apps\\git\\current\\bin\\bash" },
 
 	-- Fix CTRL + SPACE issue for Neovim/Git Bash (https://github.com/wez/wezterm/issues/405)
 	keys = {
