@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 
-local color_scheme_dark = "Edge Dark (base16)"
-local color_scheme_light = "Edge Light (base16)"
+local color_scheme_dark = "rose-pine-moon"
+local color_scheme_light = "rose-pine-dawn"
 
 wezterm.on("toggle-theme", function(window, _)
 	local overrides = window:get_config_overrides() or {}
@@ -33,7 +33,7 @@ return {
 	default_prog = { "powershell.exe", "-NoLogo" },
 	color_scheme = color_scheme_dark,
 	font_dirs = { "fonts" },
-	font_size = 11.25,
+	font_size = 11.5,
 	font = wezterm.font_with_fallback({
 		{ family = "Intel One Mono" },
 		{ family = "Symbols NFM" },
@@ -66,4 +66,11 @@ return {
 			action = wezterm.action.EmitEvent("toggle-ligatures"),
 		},
 	},
+	window_padding = {
+		left = 0,
+		top = 0,
+		right = 0,
+		bottom = 0,
+	},
+	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
 }
