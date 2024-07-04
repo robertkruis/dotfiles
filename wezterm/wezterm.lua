@@ -30,13 +30,13 @@ wezterm.on("toggle-ligatures", function(window, _)
 end)
 
 return {
-	default_prog = { "powershell.exe", "-NoLogo" },
+	default_prog = { "pwsh", "-NoLogo" },
 	color_scheme = color_scheme_dark,
 	font_dirs = { "fonts" },
-	font_size = 11.5,
+	font_size = 11.75,
 	font = wezterm.font_with_fallback({
-		{ family = "Intel One Mono" },
-		{ family = "Symbols NFM" },
+		{ family = "Iosevka Term" },
+		{ family = "Symbols Nerd Font Mono" },
 	}),
 	line_height = 1.0,
 	cell_width = 1.0,
