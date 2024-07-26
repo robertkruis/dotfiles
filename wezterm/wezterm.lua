@@ -18,6 +18,7 @@ wezterm.on("toggle-theme", function(window, _)
 	window:set_config_overrides(overrides)
 end)
 
+-- FIXME: not working when harfbuzz_features are specified on the font level (see: https://github.com/wez/wezterm/issues/5420)
 wezterm.on("toggle-ligatures", function(window, _)
 	local overrides = window:get_config_overrides() or {}
 	if not overrides.harfbuzz_features then
@@ -33,9 +34,13 @@ return {
 	default_prog = { "pwsh", "-NoLogo" },
 	color_scheme = color_scheme_dark,
 	font_dirs = { "fonts" },
-	font_size = 11.75,
+	font_size = 10.75,
 	font = wezterm.font_with_fallback({
-		{ family = "Iosevka Term" },
+		{
+			family = "JuliaMono",
+			weight = "Light",
+			harfbuzz_features = { "calt=0", "zero", "ss01", "ss10", "ss16" },
+		},
 		{ family = "Symbols Nerd Font Mono" },
 	}),
 	line_height = 1.0,
