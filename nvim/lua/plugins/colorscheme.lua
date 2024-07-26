@@ -1,20 +1,12 @@
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    priority = 1000,
+    "rmehri01/onenord.nvim",
     lazy = false,
+    priority = 1000,
     opts = {
-      dark_variant = "moon",
-      enable = {
-        legacy_highlights = false,
-      },
       styles = {
-        italic = false,
-      },
-      highlight_groups = {
-        Comment = { italic = true },
-        Keyword = { italic = true },
+        keywords = "italic",
+        comments = "italic",
       },
     },
   },
@@ -22,7 +14,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "rose-pine",
+      colorscheme = "onenord",
     },
   },
 }
