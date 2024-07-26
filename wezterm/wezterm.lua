@@ -1,7 +1,7 @@
 local wezterm = require("wezterm")
 
-local color_scheme_dark = "rose-pine-moon"
-local color_scheme_light = "rose-pine-dawn"
+local color_scheme_dark = "OneNord"
+local color_scheme_light = "OneNord Light"
 
 wezterm.on("toggle-theme", function(window, _)
 	local overrides = window:get_config_overrides() or {}
@@ -78,4 +78,5 @@ return {
 		bottom = 0,
 	},
 	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
+	use_fancy_tab_bar = false,
 }
